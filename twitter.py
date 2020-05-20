@@ -27,13 +27,21 @@ def connect(username, time, tweet, retweets, place, location):
     return
 
 
-
-# python class to access twitter API
 class stream_listner(tweepy.StreamListener):
+    """
+    python class to access twitter API
+    """    
+    
     def on_connect(self):
+        """
+        show connection status
+        """  
         print('You are connected to the Twitter API')
 
     def on_error(self):
+        """
+        throw error if status code is not 200
+        """
         if status_code != 200:
             print('error found')
             return False
